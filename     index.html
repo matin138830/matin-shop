@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MATIN SHOP | فروشگاه اینترنتی</title>
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:Tahoma,Arial,sans-serif;background:#f6f7fb;color:#171923;line-height:1.8}
+    header{background:#111827;color:#fff;position:sticky;top:0;z-index:10}
+    .nav{max-width:1100px;margin:auto;padding:16px 20px;display:flex;align-items:center;justify-content:space-between;gap:15px}
+    .logo{font-size:25px;font-weight:800;letter-spacing:1px}
+    .cart{border:0;background:#fff;color:#111827;padding:9px 15px;border-radius:12px;font-weight:bold;cursor:pointer}
+    .hero{max-width:1100px;margin:28px auto;padding:45px 25px;border-radius:24px;background:linear-gradient(135deg,#111827,#374151);color:white;text-align:center}
+    .hero h1{font-size:36px;margin-bottom:10px}
+    .hero p{color:#d1d5db;margin-bottom:20px}
+    .btn{display:inline-block;background:#fff;color:#111827;text-decoration:none;padding:11px 20px;border-radius:12px;font-weight:bold;border:0;cursor:pointer}
+    main{max-width:1100px;margin:auto;padding:0 20px 40px}
+    .title{text-align:center;font-size:28px;margin:35px 0 20px}
+    .products{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+    .card{background:white;border-radius:18px;overflow:hidden;box-shadow:0 7px 25px rgba(0,0,0,.07);padding-bottom:16px}
+    .pic{height:180px;background:#e5e7eb;display:flex;align-items:center;justify-content:center;font-size:55px}
+    .card h3,.card p,.card .price{padding:0 16px}
+    .card h3{margin-top:13px}
+    .price{font-weight:800;font-size:19px;margin:8px 0 12px}
+    .card .add{margin:0 16px;width:calc(100% - 32px);padding:10px;border:0;border-radius:11px;background:#111827;color:#fff;cursor:pointer}
+    .contact{background:white;border-radius:18px;padding:25px;margin-top:35px;text-align:center}
+    footer{background:#111827;color:#d1d5db;text-align:center;padding:25px 15px}
+    #count{font-weight:bold}
+    @media(max-width:600px){.hero h1{font-size:28px}.nav{padding:13px 15px}}
+  </style>
+</head>
+<body>
+<header>
+  <div class="nav">
+    <div class="logo">MATIN SHOP</div>
+    <button class="cart" onclick="showCart()">🛒 سبد خرید (<span id="count">0</span>)</button>
+  </div>
+</header>
+
+<section class="hero">
+  <h1>به MATIN SHOP خوش آمدید</h1>
+  <p>فروشگاه اینترنتی شما با محصولات منتخب و خریدی ساده و سریع</p>
+  <a class="btn" href="#products">مشاهده محصولات</a>
+</section>
+
+<main>
+  <h2 class="title" id="products">محصولات</h2>
+  <div class="products">
+    <article class="card">
+      <div class="pic">🎧</div>
+      <h3>هدفون بی‌سیم</h3>
+      <p>کیفیت صدای عالی و طراحی سبک</p>
+      <div class="price">۸۹۰,۰۰۰ تومان</div>
+      <button class="add" onclick="addToCart('هدفون بی‌سیم')">افزودن به سبد</button>
+    </article>
+    <article class="card">
+      <div class="pic">⌚</div>
+      <h3>ساعت هوشمند</h3>
+      <p>طراحی مدرن برای استفاده روزمره</p>
+      <div class="price">۱,۴۹۰,۰۰۰ تومان</div>
+      <button class="add" onclick="addToCart('ساعت هوشمند')">افزودن به سبد</button>
+    </article>
+    <article class="card">
+      <div class="pic">🎒</div>
+      <h3>کوله‌پشتی</h3>
+      <p>جادار، مقاوم و مناسب استفاده روزانه</p>
+      <div class="price">۶۹۰,۰۰۰ تومان</div>
+      <button class="add" onclick="addToCart('کوله‌پشتی')">افزودن به سبد</button>
+    </article>
+    <article class="card">
+      <div class="pic">📱</div>
+      <h3>لوازم جانبی موبایل</h3>
+      <p>محصولات کاربردی با قیمت مناسب</p>
+      <div class="price">۳۹۰,۰۰۰ تومان</div>
+      <button class="add" onclick="addToCart('لوازم جانبی موبایل')">افزودن به سبد</button>
+    </article>
+  </div>
+
+  <section class="contact" id="contact">
+    <h2>📞 تماس با ما</h2>
+    <p>برای سفارش و پشتیبانی با ما در ارتباط باشید.</p>
+    <p><strong>شماره تماس:</strong> ۰۹۱۲۱۲۳۴۵۶۷</p>
+  </section>
+</main>
+
+<footer>
+  © ۲۰۲۶ MATIN SHOP — تمامی حقوق محفوظ است.
+</footer>
+
+<script>
+let count = 0;
+function addToCart(name){
+  count++;
+  document.getElementById('count').textContent = count;
+  alert(name + ' به سبد خرید اضافه شد.');
+}
+function showCart(){
+  alert(count ? 'تعداد محصولات سبد خرید: ' + count : 'سبد خرید شما خالی است.');
+}
+</script>
+</body>
+</html>
